@@ -71,7 +71,7 @@
 
 
 
-str1 = input('Введите строку 1: ')
-str2 = input('Введите строку 2: ')
+# str1 = input('Введите строку 1: ')
+# str2 = input('Введите строку 2: ')
 
-print(len(str1.split(str2)) - 1)
+# print(len(str1.split(str2)) - 1)
