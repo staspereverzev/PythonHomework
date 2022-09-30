@@ -1,3 +1,3 @@
-import cont
+import controller
 
-cont.calc()
+controller.work()
