@@ -12,3 +12,4 @@ def weather(city):
  
 
     return (f'В городе {city} сейчас {round(t)} C, cкорость ветра: {w} м/с.')
+

@@ -6,6 +6,9 @@ from spy import *
 from pyowm import OWM
 from multiprocessing import context
 import functions as func
+import YTdwl as dwl
+
+
 
 
 async def hi_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -14,7 +17,7 @@ async def hi_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await log(update, context)
-    await update.message.reply_text(f'/hi\n/time\n/help')
+    await update.message.reply_text(f'/help - Показать команды\n/hi - Приветствие\n/time - Текущее время\n/sum - Сумма\n/mult - Умножение\n/sub - Вычитание\n/div - Деление\n/calc -Встроенный калькулятор\n/temp - Погода в указанном городе\n/dwl ссылка - скачать с YouTube')
 
 async def time_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await log(update, context)
@@ -92,9 +95,12 @@ async def weather(update: Update, context: CallbackContext):
     
     msg = update.message.text 
     items = msg.split()
-    # context.bot.send_message(chat_id=update.effective_chat.id, 
-    #                          text=func.weather(items[1]))
-
     await update.message.reply_text(f'{func.weather(items[1])}')
+
+async def download_yt(update: Update, context: CallbackContext):
+    
+    msg = update.message.text 
+    items = msg.split()
+    await update.message.reply_text(f'{dwl.download_yt(items[1])}')
 
 

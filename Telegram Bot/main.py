@@ -5,6 +5,7 @@ from bot_commands import *
 
 
 
+
 app = ApplicationBuilder().token("5786521972:AAGTdVIhx6C5cWsmYIsxJEnRouXmlq6IZq4").build()
 
 app.add_handler(CommandHandler("hi", hi_command))
@@ -16,7 +17,8 @@ app.add_handler(CommandHandler("div",div_command))
 app.add_handler(CommandHandler("sub",sub_command))
 app.add_handler(CommandHandler("calc",calc_command))
 app.add_handler(CommandHandler("temp",weather))
-
+app.add_handler(CommandHandler("dwl",download_yt))
 
 print('server start')
 app.run_polling()
+
